@@ -77,6 +77,7 @@
     font-size: 1rem;
     flex-direction: row;
     gap: 5px;
+    cursor: pointer;
 }
 
 :global(.ant-input-search .ant-input-group .ant-input-affix-wrapper:not(:last-child)) {

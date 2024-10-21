@@ -7,16 +7,28 @@ import { CgProfile } from "react-icons/cg";
 import youtube from '../../../assets/images/youtube.png';
 import SearchInput from '../Search/Search';
 import useMobile from '../../CustomsHooks/UseMobile';
+import AuthModal from '../../Authentication/AuthModal';
 
 const Navbar = ({ toggleSidebar }) => {
   const [showSearch, setShowSearch] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+
   const isMobile = useMobile();
+
+  const handleSignUp = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
 
   return (
     <div className={styles.navbar_container}>
       <div className={styles.iconNhambugger}>
         <div className={styles.hambugger_icon} onClick={toggleSidebar}>
-          <RxHamburgerMenu size="1.5rem" cursor="pointer"/>
+          <RxHamburgerMenu size="1.5rem" cursor="pointer" />
         </div>
         <div className={`${showSearch ? styles.youtubeIconsInactive : styles.youtubeIcons}`}>
           <img src={youtube} alt='YouTube Icons' />
@@ -51,7 +63,7 @@ const Navbar = ({ toggleSidebar }) => {
       )}
 
       <div className={styles.profile_button_container}>
-        <div className={styles.signin_container}>
+        <div className={styles.signin_container} onClick={handleSignUp}>
           <div>
             <CgProfile size="1.5rem" color='#4848b69c' />
           </div>
@@ -61,6 +73,7 @@ const Navbar = ({ toggleSidebar }) => {
           <HiOutlineDotsVertical size="1rem" />
         </div>
       </div>
+      <AuthModal isModalVisible={isModalVisible} handleCancel={handleCancel} />
     </div>
   );
 };

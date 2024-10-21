@@ -1,0 +1,64 @@
+.modal {
+    width: 400px;
+    border-radius: 8px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.profileSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    margin-right: 10px;
+    border: 1px solid #3e46e3;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.uploadButton {
+    color: #3e46e3;
+}
+
+
+.footerButtons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.cancelButton {
+    margin-right: 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    color: #606060;
+}
+
+.cancelButton:hover {
+    background-color: #e0e0e0;
+}
+
+.createChannelButton {
+    background-color: #ff0000;
+    border: none;
+    color: white;
+}
+
+.createChannelButton:hover {
+    background-color: #e60000;
+}
+
+
+@media (max-width: 400px) {
+    .modal {
+        width: 300px;
+        border-radius: 8px;
+    }
+}
