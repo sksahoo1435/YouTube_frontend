@@ -5,7 +5,6 @@ import Home from './components/Homes/Home';
 import Navbar from './components/Navigation/Header/Navbar';
 import Sidebar from './components/Navigation/Sidebar/Sidebar';
 
-
 function RootLayout({ isSidebarCollapsed, toggleSidebar }) {
   return (
     <div className='app_container'>
@@ -21,7 +20,6 @@ function RootLayout({ isSidebarCollapsed, toggleSidebar }) {
 }
 
 function App() {
-
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(window.innerWidth < 1280);
 
   useEffect(() => {

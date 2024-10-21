@@ -1,12 +1,16 @@
 .filterContainer {
     display: flex;
     justify-content: space-between;
+    margin-left: 10px;
     align-items: center;
     position: sticky;
+    background: rgba(7, 7, 7, 0.022);
+    z-index: 999;
     gap: 10px;
+    padding-bottom: 5px;
     overflow-x: auto;
     overflow-y: hidden;
-    top: 60px;
+    top: 56px;
 }
 
 .filterContainer::-webkit-scrollbar{
@@ -14,15 +18,21 @@
 }
 
 .filterButton {
-    background-color: #007bff;
-    color: white; 
+    background-color: #b4b4b4;
+    color: black;
     border: none;
     border-radius: 5px;
     padding: 10px 15px;
-    cursor: pointer; 
+    cursor: pointer;
     transition: background-color 0.3s;
+    font-weight: 700;
 }
 
 .filterButton:hover {
-    background-color: #0056b3;
+    background-color: #8b8b8b;
+}
+
+.selected {
+    background-color: black;
+    color: white; 
 }
