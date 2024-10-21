@@ -4,6 +4,7 @@ import './App.css';
 import Home from './components/Homes/Home';
 import Navbar from './components/Navigation/Header/Navbar';
 import Sidebar from './components/Navigation/Sidebar/Sidebar';
+import VedioPlayer from './components/VedioPlayer/VedioPlayer';
 
 function RootLayout({ isSidebarCollapsed, toggleSidebar }) {
   return (
@@ -46,6 +47,10 @@ function App() {
         {
           path: "/",
           element: <Home />,
+        },
+        {
+          path: "/watch/:videoId",
+          element: <VedioPlayer />,
         },
       ],
     },
