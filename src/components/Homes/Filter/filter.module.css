@@ -1,0 +1,28 @@
+.filterContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    top: 60px;
+}
+
+.filterContainer::-webkit-scrollbar{
+    display: none;
+}
+
+.filterButton {
+    background-color: #007bff;
+    color: white; 
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer; 
+    transition: background-color 0.3s;
+}
+
+.filterButton:hover {
+    background-color: #0056b3;
+}
