@@ -1,19 +1,18 @@
 .vedioPlayerPage {
     display: flex;
     padding: 20px;
+    margin-top: 56px;
     gap: 20px;
     color: #333;
 }
 
 .leftSection {
     flex: 2;
-    /* Take up more space for the video */
 }
 
 .vedioWrapper {
     position: relative;
     padding-bottom: 56.25%;
-    /* 16:9 aspect ratio */
     height: 0;
 }
 
@@ -47,8 +46,8 @@
 
 .rightSection {
     flex: 1;
-    /* Smaller space for recommended videos */
     overflow-y: auto;
+    max-height: 80vh;
 }
 
 .recommendedVideos {
@@ -88,4 +87,108 @@
 
 .recommendedViews {
     margin-top: 5px;
+}
+
+.rightSection::-webkit-scrollbar {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .vedioPlayerPage {
+        flex-direction: column;
+        padding: 10px;
+        margin-left: 15px;
+
+    }
+
+    .leftSection {
+        flex: 1;
+    }
+
+    .rightSection {
+        margin-left: 10px;
+        flex: 1;
+        margin-top: 25px;
+        width: 100%;
+        max-height: auto;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .recommendedThumbnail {
+        width: 100px;
+        height: 75px;
+    }
+
+    .recommendedTitle {
+        font-size: 13px;
+    }
+
+    .recommendedUploader,
+    .recommendedViews {
+        font-size: 11px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .vedioPlayerPage {
+        flex-direction: column;
+        padding: 15px;
+        margin-left: 15px;
+    }
+
+    .leftSection {
+        flex: 1;
+    }
+
+    .rightSection {
+        flex: 1;
+        margin-left: 10px;
+        margin-top: 20px;
+        max-height: auto;
+    }
+
+    .title {
+        font-size: 17px;
+    }
+
+    .recommendedThumbnail {
+        width: 110px;
+        height: 82px;
+    }
+
+    .recommendedTitle {
+        font-size: 14px;
+    }
+
+    .recommendedUploader,
+    .recommendedViews {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .vedioPlayerPage {
+        flex-direction: row;
+    }
+
+    .leftSection {
+        flex: 2;
+    }
+
+    .rightSection {
+        flex: 1;
+        max-height: 80vh;
+    }
+
+    .recommendedVideoCard:hover .recommendedTitle {
+        color: #065fd4;
+    }
+
+    .recommendedThumbnail {
+        width: 120px;
+        height: 90px;
+    }
 }
