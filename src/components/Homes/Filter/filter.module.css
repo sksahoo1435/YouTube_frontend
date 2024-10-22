@@ -1,20 +1,18 @@
 .filterContainer {
     display: flex;
-    justify-content: space-between;
-    margin-left: 10px;
+    justify-content: flex-start; 
     align-items: center;
     position: sticky;
-    background: rgba(7, 7, 7, 0.022);
-    z-index: 999;
-    gap: 10px;
-    padding-bottom: 5px;
-    overflow-x: auto;
+    z-index: 99;
+    gap: 25px;
+    padding: 8px 10px;
+    overflow-x: auto; 
     overflow-y: hidden;
     top: 56px;
 }
 
-.filterContainer::-webkit-scrollbar{
-    display: none;
+.filterContainer::-webkit-scrollbar {
+    display: none; 
 }
 
 .filterButton {
@@ -29,10 +27,12 @@
 }
 
 .filterButton:hover {
-    background-color: #8b8b8b;
+    background-color: #e0e0e0; 
 }
 
 .selected {
     background-color: black;
     color: white; 
+    border-radius: 10px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
 }

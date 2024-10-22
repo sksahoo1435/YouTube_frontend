@@ -160,3 +160,9 @@
         display: none;
     }
 }
+
+@media (max-width: 370px){
+    .micBox{
+        display: none;
+    }
+}

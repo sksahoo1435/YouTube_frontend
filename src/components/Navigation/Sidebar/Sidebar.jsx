@@ -10,13 +10,18 @@ import { FaRegCircleUser } from "react-icons/fa6";
 import { SiYoutubeshorts } from "react-icons/si";
 
 import styles from './sidebar.module.css';
+import { useNavigate } from 'react-router-dom';
 
 const Sidebar = ({ isCollapsed, toggleSidebar }) => {
+    const navigate = useNavigate();
+    const handleHome =() =>{
+        navigate('/')
+    }
     return (
         <>
             <aside className={`${styles.sidebar} ${isCollapsed ? styles.sidebar_collapsed : styles.sidebar_expanded}`}>
                 <div className={styles.sidebar_section}>
-                    <button className={styles.sidebar_button} onClick={toggleSidebar}>
+                    <button className={styles.sidebar_button} onClick={handleHome}>
                         <AiFillHome className="icon" />
                         {!isCollapsed && <span>Home</span>}
                     </button>

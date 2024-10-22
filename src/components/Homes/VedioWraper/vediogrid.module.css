@@ -44,3 +44,15 @@
     color: #888;
     margin-top: 5px;
 }
+
+@media (max-width: 400px){
+    .videoCard{
+        width: 265px;
+    }
+}
+
+@media (max-width: 360px){
+    .videoCard{
+        width: 230px;
+    }
+}

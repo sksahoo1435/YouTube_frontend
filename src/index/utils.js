@@ -21,6 +21,12 @@ export const vedioData = [
                 "userId": "userFrontendDev",
                 "text": "Great explanation of CSS Grid! Thanks for the tips.",
                 "timestamp": "2024-08-31T15:20:00Z"
+            },
+            {
+                "commentId": "comment07",
+                "userId": "userFrontendDev",
+                "text": "Great explanation of CSS Grid! Thanks for the tips.",
+                "timestamp": "2024-08-31T15:20:00Z"
             }
         ],
         "videoUrl": "https://www.youtube.com/watch?v=8clJziVcql4"
