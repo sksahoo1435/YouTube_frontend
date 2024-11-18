@@ -1,16 +1,29 @@
-import React from 'react'
+import React, { useCallback } from 'react';
 import styles from './search.module.css';
-import { Input, Space } from 'antd';
+import { Input } from 'antd';
+
 const { Search } = Input;
 
-const SearchInput = () => {
-    return (
-        <Search
-            placeholder="Search"
-            allowClear
-            // onSearch={onSearch}
-        />
-    )
-}
+const SearchInput = ({ onSearch }) => {
 
-export default SearchInput
+    const handleSearch = useCallback(
+        (value) => {
+            onSearch(value);
+        },
+        [onSearch]
+    );
+
+    return (
+        <div className={styles.searchContainer}>
+            <Search
+                placeholder="Search"
+                allowClear
+                onSearch={handleSearch}
+                className={styles.searchInput}
+            />
+        </div>
+    );
+};
+
+
+export default SearchInput;

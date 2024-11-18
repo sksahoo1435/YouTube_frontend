@@ -54,7 +54,7 @@ function App() {
           element: <VedioPlayer />,
         },
         {
-          path: "/channel/:id",
+          path: "/channel",
           element: <ChannelPage/>,
         },
       ],

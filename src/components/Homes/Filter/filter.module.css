@@ -9,6 +9,8 @@
     overflow-x: auto; 
     overflow-y: hidden;
     top: 56px;
+    background: #f8f8f8;
+    border-radius: 0.5rem;
 }
 
 .filterContainer::-webkit-scrollbar {

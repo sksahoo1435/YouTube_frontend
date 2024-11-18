@@ -60,10 +60,11 @@
     padding: 10px 20px;
     font-size: 1rem;
     cursor: pointer;
+    color: black;
     transition: background-color 0.3s;
 }
 
-.tabButton:nth-child(2){
+.tabButton.activeTab{
     color: black;
     text-decoration: underline;
 }

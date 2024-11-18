@@ -73,6 +73,7 @@
 
 .sidebar_button:hover {
     background-color: #f0f0f0;
+    padding: 10px 15px;
 }
 
 .icon {
@@ -97,7 +98,7 @@
         width: 200px;
         height: 100vh;
         top: 56px;
-        z-index: 999;
+        z-index: 998;
     }
 
     .sidebar_collapsed {
@@ -109,7 +110,12 @@
     }
 
     .sidebar_button {
-        padding: 13px 7px;
+        padding: 10px 7px;
+        padding-left: 15px;
+    }
+
+    .sidebar_button:hover{
+        padding: 10px 7px;
         padding-left: 15px;
     }
 

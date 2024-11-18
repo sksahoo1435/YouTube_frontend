@@ -67,6 +67,7 @@
     flex-flow: row-reverse;
 }
 
+
 .signin_container {
     width: 100px;
     padding: 5px;
@@ -78,6 +79,15 @@
     flex-direction: row;
     gap: 5px;
     cursor: pointer;
+}
+
+.login_container,
+.login_container img{
+    width: 35px;
+    height: 35px;
+    border: 1px solid #4848b69c;
+    cursor: pointer;
+    border-radius: 50%;
 }
 
 :global(.ant-input-search .ant-input-group .ant-input-affix-wrapper:not(:last-child)) {
@@ -107,6 +117,31 @@
     font-size: 1rem;
 }
 
+
+
+.dropdownMenu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+.dropdownItem {
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.dropdownItem:hover {
+    background-color: #f0f0f0;
+}
+
+
+
 @media screen and (max-width: 768px) {
     .search_mic_container {
         justify-content: end;
@@ -120,10 +155,12 @@
     .youtubeIconsInactive {
         display: none;
     }
+
     .signInText {
         font-size: 0.9rem;
         text-wrap: nowrap;
     }
+
     .search_icon {
         display: block;
     }
@@ -134,35 +171,36 @@
 }
 
 @media screen and (max-width: 500px) {
-    .signin_container{
+    .signin_container {
         width: 80px;
     }
+
     .signInText {
         font-size: 0.8rem;
         text-wrap: nowrap;
     }
-    
+
     .youtubeIcons img {
         height: 25px;
         width: 25px;
     }
 
-    .youtubeIcons h2{
+    .youtubeIcons h2 {
         font-size: 1rem;
     }
-    
+
     .youtubeIcons sup {
         font-size: smaller;
         font-weight: 200;
     }
 
-    .HiOutlineDotsVertical_mobile{
+    .HiOutlineDotsVertical_mobile {
         display: none;
     }
 }
 
-@media (max-width: 370px){
-    .micBox{
+@media (max-width: 370px) {
+    .micBox {
         display: none;
     }
 }

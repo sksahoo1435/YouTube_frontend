@@ -1,20 +1,24 @@
+import { fetchUserName } from "../Redux/Slice/AuthSlice";
+
 export const isMobileDevice = () => {
     return window.innerWidth < 768;
 };
 
 
+export const BASE_URL = 'http://localhost:4008'
+
 export const vedioData = [
     {
-        "videoId": "8clJziVcql4",
-        "title": "Sample YouTube Video 7",
-        "thumbnailUrl": "https://img.youtube.com/vi/8clJziVcql4/maxresdefault.jpg",
-        "description": "A tutorial on how to use CSS Grid for responsive layouts.",
-        "channelId": "channelWebDesign",
-        "uploader": "CSSMaster",
-        "views": 78500,
-        "likes": 5300,
-        "dislikes": 180,
-        "uploadDate": "2024-08-30",
+        "videoId": "GEP76hqA1_I",
+        "title": "The Future of AI in Business",
+        "thumbnailUrl": "https://img.youtube.com/vi/GEP76hqA1_I/maxresdefault.jpg",
+        "description": "An insightful discussion on how AI is transforming the business landscape.",
+        "channelId": "businessinsights",
+        "uploader": "Business Insights",
+        "views": 20000,
+        "likes": 1500,
+        "dislikes": 50,
+        "uploadDate": "2024-10-01",
         "comments": [
             {
                 "commentId": "comment07",
@@ -29,193 +33,134 @@ export const vedioData = [
                 "timestamp": "2024-08-31T15:20:00Z"
             }
         ],
-        "videoUrl": "https://www.youtube.com/watch?v=8clJziVcql4"
-    }
-    ,
+        "videoUrl": "https://www.youtube.com/watch?v=GEP76hqA1_I"
+    },
     {
-        "videoId": "video02",
-        "title": "Mastering Node.js",
-        "thumbnailUrl": "https://picsum.photos/id/237/200/300",
-        "description": "Deep dive into Node.js and its core modules.",
-        "channelId": "channel02",
-        "uploader": "user02",
-        "views": 32000,
-        "likes": 2100,
+        "videoId": "Zo2uYxGEdaE",
+        "title": "React Hooks: A Complete Guide",
+        "thumbnailUrl": "https://img.youtube.com/vi/Zo2uYxGEdaE/maxresdefault.jpg",
+        "description": "A comprehensive tutorial on React Hooks and how to use them effectively.",
+        "channelId": "reacttutorials",
+        "uploader": "React Tutorials",
+        "views": 30000,
+        "likes": 2200,
         "dislikes": 30,
-        "uploadDate": "2024-08-15",
-        "comments": []
+        "uploadDate": "2024-09-15",
+        "comments": [],
+        "videoUrl": "https://www.youtube.com/watch?v=Zo2uYxGEdaE"
     },
     {
-        "videoId": "video03",
-        "title": "Python for Beginners",
-        "thumbnailUrl": "https://picsum.photos/seed/picsum/200/300",
-        "description": "An introduction to Python programming.",
-        "channelId": "channel03",
-        "uploader": "user03",
-        "views": 27000,
+        "videoId": "tGPZmChPpXQ",
+        "title": "Node.js Crash Course",
+        "thumbnailUrl": "https://img.youtube.com/vi/Zo2uYxGEdaE/maxresdefault.jpg",
+        "description": "A crash course in Node.js covering the basics and beyond.",
+        "channelId": "nodejschannel",
+        "uploader": "Node.js Channel",
+        "views": 45000,
         "likes": 3400,
-        "dislikes": 40,
-        "uploadDate": "2024-07-10",
-        "comments": []
+        "dislikes": 60,
+        "uploadDate": "2024-08-20",
+        "comments": [],
+        "videoUrl": "https://www.youtube.com/watch?v=tGPZmChPpXQ"
     },
     {
-        "videoId": "Afs6QbzMyuM",
-        "title": "Sample YouTube Video",
-        "thumbnailUrl": "https://img.youtube.com/vi/Afs6QbzMyuM/maxresdefault.jpg",
-        "description": "This is a sample YouTube video description for a tutorial video.",
-        "channelId": "channelABC",
-        "uploader": "SampleChannel",
-        "views": 124000,
-        "likes": 2500,
+        "videoId": "NR6OjlMfBPo",
+        "title": "Mastering Python for Data Science",
+        "thumbnailUrl": "https://img.youtube.com/vi/NR6OjlMfBPo/maxresdefault.jpg",
+        "description": "Learn how to use Python for data analysis and visualization.",
+        "channelId": "datascience",
+        "uploader": "Data Science Tutorials",
+        "views": 56000,
+        "likes": 4100,
+        "dislikes": 90,
+        "uploadDate": "2024-07-30",
+        "comments": [],
+        "videoUrl": "https://www.youtube.com/watch?v=NR6OjlMfBPo"
+    },
+    {
+        "videoId": "6RiHpicS3VQ",
+        "title": "Building Web Applications with Django",
+        "thumbnailUrl": "https://img.youtube.com/vi/5vR1zQISj1g/maxresdefault.jpg",
+        "description": "A guide to building robust web applications using Django.",
+        "channelId": "django",
+        "uploader": "Django Developers",
+        "views": 72000,
+        "likes": 5200,
         "dislikes": 100,
-        "uploadDate": "2024-10-20",
-        "comments": [
-            {
-                "commentId": "comment01",
-                "userId": "userXYZ",
-                "text": "Amazing tutorial! Thanks for sharing.",
-                "timestamp": "2024-10-21T12:00:00Z"
-            }
-        ],
-        "videoUrl": "https://www.youtube.com/watch?v=Afs6QbzMyuM"
+        "uploadDate": "2024-06-15",
+        "comments": [],
+        "videoUrl": "https://www.youtube.com/watch?v=6RiHpicS3VQ"
     },
     {
-        "videoId": "DZC0tquy0kU",
-        "title": "Sample YouTube Video 2",
-        "thumbnailUrl": "https://img.youtube.com/vi/DZC0tquy0kU/maxresdefault.jpg",
-        "description": "This is another sample YouTube video description for a tech video.",
-        "channelId": "channelXYZ",
-        "uploader": "TechChannel",
-        "views": 55000,
-        "likes": 4300,
-        "dislikes": 200,
-        "uploadDate": "2024-09-25",
-        "comments": [
-            {
-                "commentId": "comment02",
-                "userId": "userABC",
-                "text": "This was a fantastic explanation!",
-                "timestamp": "2024-09-26T10:00:00Z"
-            }
-        ],
-        "videoUrl": "https://www.youtube.com/watch?v=DZC0tquy0kU"
+        "videoId": "DvSOLGk_2Lg",
+        "title": "CSS Grid Layout Crash Course",
+        "thumbnailUrl": "https://img.youtube.com/vi/DvSOLGk_2Lg/maxresdefault.jpg",
+        "description": "Learn how to use CSS Grid for responsive web design.",
+        "channelId": "cssgrid",
+        "uploader": "CSS Grid Master",
+        "views": 39000,
+        "likes": 2700,
+        "dislikes": 40,
+        "uploadDate": "2024-05-10",
+        "comments": [],
+        "videoUrl": "https://www.youtube.com/watch?v=DvSOLGk_2Lg"
     },
     {
-        "videoId": "4Eo24Wqp3Rw",
-        "title": "Sample YouTube Video 3",
-        "thumbnailUrl": "https://img.youtube.com/vi/4Eo24Wqp3Rw/maxresdefault.jpg",
-        "description": "This is a sample YouTube video description for a music video.",
-        "channelId": "channelMusic",
-        "uploader": "MusicChannel",
-        "views": 78000,
+        "videoId": "icmRiXYMy6E",
+        "title": "JavaScript Fundamentals",
+        "thumbnailUrl": "https://img.youtube.com/vi/icmRiXYMy6E/maxresdefault.jpg",
+        "description": "A beginner's guide to JavaScript, covering all the fundamentals.",
+        "channelId": "jsfundamentals",
+        "uploader": "JavaScript Master",
+        "views": 48000,
+        "likes": 3900,
+        "dislikes": 70,
+        "uploadDate": "2024-04-22",
+        "comments": [],
+        "videoUrl": "https://www.youtube.com/watch?v=icmRiXYMy6E"
+    },
+    {
+        "videoId": "4E2kY4YMsow",
+        "title": "Top 10 React Tips and Tricks",
+        "thumbnailUrl": "https://img.youtube.com/vi/4E2kY4YMsow/maxresdefault.jpg",
+        "description": "Discover essential tips and tricks for mastering React.",
+        "channelId": "reactmastery",
+        "uploader": "React Mastery",
+        "views": 63000,
+        "likes": 4900,
+        "dislikes": 80,
+        "uploadDate": "2024-03-18",
+        "comments": [],
+        "videoUrl": "https://www.youtube.com/watch?v=4E2kY4YMsow"
+    },
+    {
+        "videoId": "5vR1zQISj1g",
+        "title": "Understanding REST APIs",
+        "thumbnailUrl": "https://img.youtube.com/vi/5vR1zQISj1g/maxresdefault.jpg",
+        "description": "An introduction to REST APIs and how to build them.",
+        "channelId": "restapi",
+        "uploader": "API Developer",
+        "views": 72000,
         "likes": 6200,
-        "dislikes": 150,
-        "uploadDate": "2024-09-28",
-        "comments": [
-            {
-                "commentId": "comment03",
-                "userId": "userMusicFan",
-                "text": "This track is fire! Love it.",
-                "timestamp": "2024-09-29T08:00:00Z"
-            }
-        ],
-        "videoUrl": "https://www.youtube.com/watch?v=4Eo24Wqp3Rw"
-    },
-    {
-        "videoId": "coo2mLgQVVs",
-        "title": "Sample YouTube Video 8",
-        "thumbnailUrl": "https://img.youtube.com/vi/coo2mLgQVVs/maxresdefault.jpg",
-        "description": "An in-depth guide on using MongoDB with Node.js for building scalable applications.",
-        "channelId": "channelBackendDev",
-        "uploader": "NodeGuru",
-        "views": 120000,
-        "likes": 9400,
-        "dislikes": 250,
-        "uploadDate": "2024-10-01",
-        "comments": [
-            {
-                "commentId": "comment08",
-                "userId": "userBackendPro",
-                "text": "Amazing tutorial, helped me a lot with my project!",
-                "timestamp": "2024-10-02T11:45:00Z"
-            }
-        ],
-        "videoUrl": "https://www.youtube.com/watch?v=coo2mLgQVVs"
-    },
-    {
-        "videoId": "6F7G8H9I0J",
-        "title": "Top 10 Python Libraries in 2024",
-        "thumbnailUrl": "https://img.youtube.com/vi/hzl_9eRNeYY/maxresdefault.jpg",
-        "description": "Explore the top 10 Python libraries that will dominate 2024.",
-        "channelId": "channelPythonPro",
-        "uploader": "PythonPro",
-        "views": 89000,
-        "likes": 4300,
-        "dislikes": 110,
-        "uploadDate": "2024-09-25",
-        "comments": [
-            {
-                "commentId": "comment02",
-                "userId": "userDataNerd",
-                "text": "Can't wait to try these out!",
-                "timestamp": "2024-09-26T14:15:00Z"
-            }
-        ],
-        "videoUrl": "https://www.youtube.com/watch?v=6F7G8H9I0J"
-    },
-    {
-        "videoId": "coo2mLgQVVs",
-        "title": "Sample YouTube Video 8",
-        "thumbnailUrl": "https://img.youtube.com/vi/coo2mLgQVVs/maxresdefault.jpg",
-        "description": "An in-depth guide on using MongoDB with Node.js for building scalable applications.",
-        "channelId": "channelBackendDev",
-        "uploader": "NodeGuru",
-        "views": 120000,
-        "likes": 9400,
-        "dislikes": 250,
-        "uploadDate": "2024-10-01",
-        "comments": [
-            {
-                "commentId": "comment08",
-                "userId": "userBackendPro",
-                "text": "Amazing tutorial, helped me a lot with my project!",
-                "timestamp": "2024-10-02T11:45:00Z"
-            }
-        ],
-        "videoUrl": "https://www.youtube.com/watch?v=coo2mLgQVVs"
-    },
-    {
-        "videoId": "8clJziVcql4",
-        "title": "Sample YouTube Video 7",
-        "thumbnailUrl": "https://img.youtube.com/vi/8clJziVcql4/maxresdefault.jpg",
-        "description": "A tutorial on how to use CSS Grid for responsive layouts.",
-        "channelId": "channelWebDesign",
-        "uploader": "CSSMaster",
-        "views": 78500,
-        "likes": 5300,
-        "dislikes": 180,
-        "uploadDate": "2024-08-30",
-        "comments": [
-            {
-                "commentId": "comment07",
-                "userId": "userFrontendDev",
-                "text": "Great explanation of CSS Grid! Thanks for the tips.",
-                "timestamp": "2024-08-31T15:20:00Z"
-            }
-        ],
-        "videoUrl": "https://www.youtube.com/watch?v=8clJziVcql4"
-    },
-    {
-        "videoId": "video30",
-        "title": "Best Practices in Web Development",
-        "thumbnailUrl": "https://picsum.photos/200/300?grayscale",
-        "description": "Learn the top web development best practices.",
-        "channelId": "channel30",
-        "uploader": "user30",
-        "views": 86000,
-        "likes": 9300,
-        "dislikes": 400,
-        "uploadDate": "2024-01-10",
-        "comments": []
+        "dislikes": 90,
+        "uploadDate": "2024-02-12",
+        "comments": [],
+        "videoUrl": "https://www.youtube.com/watch?v=5vR1zQISj1g"
     }
-]
+];
+
+
+
+export const getUserDetails = async (userId, dispatch) => {
+    try {
+        const user = await dispatch(fetchUserName(userId));
+        if (user) {
+            const { username, profilePic } = user;
+            return { username, profilePic };
+        }
+        return { username: "User", profilePic: null };
+    } catch (error) {
+        console.error("Error fetching user details:", error);
+        return { username: "User", profilePic: null };
+    }
+};

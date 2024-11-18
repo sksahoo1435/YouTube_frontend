@@ -8,6 +8,7 @@
 .videoCard {
     background-color: #fff;
     border-radius: 10px;
+    width: 300px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.2s ease-in-out;
@@ -35,6 +36,7 @@
 
 .uploader {
     font-size: 14px;
+    font-weight: 600;
     color: #555;
 }
 
@@ -45,14 +47,37 @@
     margin-top: 5px;
 }
 
-@media (max-width: 400px){
-    .videoCard{
+.Vedio_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.loaderWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 1000;
+}
+
+:global(.ant-spin-dot .ant-spin-dot-item) {
+    background-color: red !important;
+}
+
+@media (max-width: 400px) {
+    .videoCard {
         width: 265px;
     }
 }
 
-@media (max-width: 360px){
-    .videoCard{
+@media (max-width: 360px) {
+    .videoCard {
         width: 230px;
     }
 }
