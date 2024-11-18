@@ -30,7 +30,7 @@ const ChannelSlice = createSlice({
 export const createChannel = (channelData,handleClose) => async (dispatch) => {
     dispatch(setIsChannelLoader(true));
     try {
-        const response = await api.post(`${BASE_URL}/channel`, channelData);
+        const response = await api.post(`${BASE_URL}channel/channel`, channelData);
 
         if (response.data && response.data.message) {
             message.success(response.data.message);
@@ -47,7 +47,7 @@ export const createChannel = (channelData,handleClose) => async (dispatch) => {
 export const getChannels = () => async (dispatch) => {
     dispatch(setIsChannelLoader(true));
     try {
-        const response = await api.get(`${BASE_URL}/channel`);
+        const response = await api.get(`${BASE_URL}channel/channel`);
 
         if (response.data && response.data.channel) {
             dispatch(setAllChannel(response.data.channel));
@@ -62,7 +62,7 @@ export const getChannels = () => async (dispatch) => {
 export const getChannelById = (channelId) => async (dispatch) => {
     dispatch(setIsChannelLoader(true));
     try {
-        const response = await api.get(`${BASE_URL}/channel/${channelId}`);
+        const response = await api.get(`${BASE_URL}channel/channel/${channelId}`);
 
         if (response.data && response.data.channel) {
             dispatch(setChannel(response.data.channel));
@@ -78,7 +78,7 @@ export const getChannelById = (channelId) => async (dispatch) => {
 export const updateChannel = (channelId, updatedData) => async (dispatch) => {
     dispatch(setIsChannelLoader(true));
     try {
-        const response = await api.put(`${BASE_URL}/channel/${channelId}`, updatedData);
+        const response = await api.put(`${BASE_URL}channel/channel/${channelId}`, updatedData);
 
         if (response.data && response.data.message) {
             message.success(response.data.message);

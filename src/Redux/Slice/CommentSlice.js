@@ -27,7 +27,7 @@ const CommentSlice = createSlice({
 export const addComment = (commentData) => async (dispatch) => {
     dispatch(setCommentLoader(true));
     try {
-        const response = await api.post(`${BASE_URL}/comment/`, commentData);
+        const response = await api.post(`${BASE_URL}comment/`, commentData);
         if (response.data && response.data.comment) {
             dispatch(fetchComments(response.data.comment.videoId));
             message.success("Comment added successfully.");
@@ -43,7 +43,7 @@ export const addComment = (commentData) => async (dispatch) => {
 export const fetchComments = (videoId) => async (dispatch) => {
     dispatch(setCommentLoader(true));
     try {
-        const response = await api.get(`${BASE_URL}/comment/all/${videoId}`);
+        const response = await api.get(`${BASE_URL}comment/all/${videoId}`);
         if (response.data && response.data.comments) {
             dispatch(setComments(response.data.comments));
         }
@@ -58,7 +58,7 @@ export const fetchComments = (videoId) => async (dispatch) => {
 export const fetchCommentById = (commentId) => async (dispatch) => {
     dispatch(setCommentLoader(true));
     try {
-        const response = await api.get(`${BASE_URL}/comment/${commentId}`);
+        const response = await api.get(`${BASE_URL}comment/${commentId}`);
         if (response.data && response.data.comment) {
             return response.data.comment;
         }
@@ -73,7 +73,7 @@ export const fetchCommentById = (commentId) => async (dispatch) => {
 export const updateComment = (id, updatedData) => async (dispatch) => {
     dispatch(setCommentLoader(true));
     try {
-        const response = await api.put(`${BASE_URL}/comment/${id}`, updatedData);
+        const response = await api.put(`${BASE_URL}comment/${id}`, updatedData);
         if (response.data && response.data.comment) {
             dispatch(fetchComments(response.data.comment.videoId));
             message.success("Comment updated successfully.");
@@ -89,7 +89,7 @@ export const updateComment = (id, updatedData) => async (dispatch) => {
 export const deleteComment = (commentId) => async (dispatch) => {
     dispatch(setCommentLoader(true));
     try {
-        const response = await api.delete(`${BASE_URL}/comment/${commentId}`);
+        const response = await api.delete(`${BASE_URL}comment/${commentId}`);
         if (response.data && response.data.message) {
             const videoId = response.data.comment.videoId;
             dispatch(fetchComments(videoId));

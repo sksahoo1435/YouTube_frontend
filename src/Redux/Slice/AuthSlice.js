@@ -32,7 +32,7 @@ const AuthSlice = createSlice({
 export const RegisterUser = (userData) => async (dispatch) => {
     dispatch(setIsAuthLoader(true));
     try {
-        const response = await api.post(`${BASE_URL}/signup`, userData);
+        const response = await api.post(`${BASE_URL}user/signup`, userData);
 
         if (response.data && response.data.message) {
             message.success(response.data.message);
@@ -48,7 +48,7 @@ export const RegisterUser = (userData) => async (dispatch) => {
 export const LoginUser = (credentials) => async (dispatch) => {
     dispatch(setIsAuthLoader(true));
     try {
-        const response = await api.post(`${BASE_URL}/login`, credentials);
+        const response = await api.post(`${BASE_URL}user/login`, credentials);
 
         if (response.data && response.data.token) {
             localStorage.setItem("youTubeToken", response.data.token);
@@ -69,7 +69,7 @@ export const LoginUser = (credentials) => async (dispatch) => {
 export const fetchUserDetails = (userId) => async (dispatch) => {
     dispatch(setIsAuthLoader(true));
     try {
-        const response = await api.get(`${BASE_URL}/user/${userId}`);
+        const response = await api.get(`${BASE_URL}user/user/${userId}`);
 
         if (response.data && response.data.user) {
             dispatch(setUser(response.data.user));
@@ -84,7 +84,7 @@ export const fetchUserDetails = (userId) => async (dispatch) => {
 export const fetchUserName = (userId) => async (dispatch) => {
     dispatch(setIsAuthLoader(true));
     try {
-        const response = await api.get(`${BASE_URL}/username/${userId}`);
+        const response = await api.get(`${BASE_URL}user/username/${userId}`);
 
         if (response.data && response.data.user) {
            return response.data.user
