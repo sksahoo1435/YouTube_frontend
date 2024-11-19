@@ -21,6 +21,15 @@ const UploadVideoModal = ({ isVisible, handleClose }) => {
 
   useEffect(() => {
     const localUser = JSON.parse(localStorage.getItem('userData')) || [];
+    setFormData({
+      title: '',
+      description: '',
+      channel: '',
+      category: 'music',
+      thumbnail: null,
+      video: null,
+    })
+    setError(''); 
     if (localUser?.userId) {
       dispatch(getChannels());
     }
@@ -32,12 +41,12 @@ const UploadVideoModal = ({ isVisible, handleClose }) => {
     if (name === 'thumbnail' || name === 'video') {
       const file = files[0];
       if (name === 'video' && file) {
-        // Check if video file size is greater than 3 MB (3 * 1024 * 1024 bytes)
+
         if (file.size > 3 * 1024 * 1024) {
           setError('Video file size exceeds 3 MB. Please select a smaller video.');
           return;
         } else {
-          setError(''); // Clear any previous errors if the file size is valid
+          setError(''); 
         }
       }
       setFormData({ ...formData, [name]: file });
