@@ -59,6 +59,10 @@ function App() {
         },
       ],
     },
+    {
+      path: "*",
+      element: <div>No page</div>,
+    },
   ]);
 
   return (
