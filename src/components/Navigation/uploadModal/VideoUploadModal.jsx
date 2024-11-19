@@ -20,9 +20,8 @@ const UploadVideoModal = ({ isVisible, handleClose }) => {
   const { allChannelAll } = useSelector((state) => state.channel);
 
   useEffect(() => {
-    const localUser = JSON.parse(localStorage.getItem("userData")) || []
+    const localUser = JSON.parse(localStorage.getItem('userData')) || [];
     if (localUser?.userId) {
-
       dispatch(getChannels());
     }
   }, []);
@@ -31,7 +30,17 @@ const UploadVideoModal = ({ isVisible, handleClose }) => {
     const { name, value, files } = e.target;
 
     if (name === 'thumbnail' || name === 'video') {
-      setFormData({ ...formData, [name]: files[0] });
+      const file = files[0];
+      if (name === 'video' && file) {
+        // Check if video file size is greater than 8 MB (8 * 1024 * 1024 bytes)
+        if (file.size > 8 * 1024 * 1024) {
+          setError('Video file size exceeds 8 MB. Please select a smaller video.');
+          return;
+        } else {
+          setError(''); // Clear any previous errors if the file size is valid
+        }
+      }
+      setFormData({ ...formData, [name]: file });
     } else {
       setFormData({ ...formData, [name]: value });
     }
