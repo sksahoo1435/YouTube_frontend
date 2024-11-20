@@ -22,7 +22,14 @@ const VedioPlayer = () => {
   const [editCommentId, setEditCommentId] = useState(null);
   const [fetchedComments, setFetchedComments] = useState({});
   const [user, setUser] = useState({});
-  const userId = JSON.parse(localStorage.getItem('userData') ?? {});
+  const userId = (() => {
+    try {
+      return JSON.parse(localStorage.getItem('userData')) || {};
+    } catch (error) {
+      console.error("Invalid userData in localStorage", error);
+      return {};
+    }
+  })();
   const getUploaderInfo = async (uploaderId) => {
     const data = await dispatch(fetchUserName(uploaderId));
 
