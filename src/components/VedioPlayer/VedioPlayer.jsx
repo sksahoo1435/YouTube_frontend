@@ -31,12 +31,15 @@ const VedioPlayer = () => {
     }
   })();
   const getUploaderInfo = async (uploaderId) => {
-    const data = await dispatch(fetchUserName(uploaderId));
+    if (uploaderId) {
+      const data = await dispatch(fetchUserName(uploaderId));
 
-    return {
-      username: data?.username || 'Unknown',
-      user_profile: data?.user_profile || imagePng,
-    };
+      return {
+        username: data?.username || 'Unknown',
+        user_profile: data?.user_profile || imagePng,
+      };
+    }
+
   };
 
   useEffect(() => {
@@ -47,12 +50,14 @@ const VedioPlayer = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const data = await dispatch(fetchUserName(userId?.userId, dispatch));
+      if (userId?.userId) {
+        const data = await dispatch(fetchUserName(userId?.userId, dispatch));
 
-      setUser({
-        username: data?.username || 'Unknown',
-        user_profile: data?.user_profile || imagePng,
-      });
+        setUser({
+          username: data?.username || 'Unknown',
+          user_profile: data?.user_profile || imagePng,
+        });
+      }
     };
     fetchUser();
   }, [userId?.userId]);

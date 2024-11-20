@@ -18,6 +18,7 @@ const ChannelPage = () => {
     const { channel } = useSelector((state) => state.channel);
 
     useEffect(() => {
+
         if (userId?.userId) {
 
             dispatch(fetchUserDetails(userId.userId));

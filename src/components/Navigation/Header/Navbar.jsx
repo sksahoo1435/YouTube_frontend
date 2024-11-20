@@ -65,12 +65,13 @@ const Navbar = ({ toggleSidebar }) => {
   }
 
   useEffect(() => {
-    const localUser = JSON.parse(localStorage.getItem("userData")) || []
+    const localUser = JSON.parse(localStorage.getItem("userData")) || {};
 
     if (localUser?.userId) {
-      dispatch(fetchUserDetails(localUser?.userId));
+      dispatch(fetchUserDetails(localUser.userId));
     }
-  }, [])
+  }, [dispatch]);
+
 
 
   return (
